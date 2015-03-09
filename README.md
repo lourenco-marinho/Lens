@@ -1,4 +1,4 @@
-![lens](lens.png)
+![Lens](Lens.png)
 
 Lens is a very simple yet elegant query builder made in Swift to work with CoreData.
 
