@@ -14,7 +14,7 @@ Requirements
 
 Installation
 --
-To use Lens with a Objective-C project, you must include all the files in the Source directory in your project. If you're in a Swift only project you just need to include the 'Lens.swift' file in your project.
+To use Lens with a Objective-C project, you must include all the files in the Source directory in your project. If you're in a Swift only project you just need to include the `Lens.swift` file in your project.
 
 Usage
 --
