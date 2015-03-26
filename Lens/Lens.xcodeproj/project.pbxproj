@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A97D9B171AC1AF8B00858161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B161AC1AF8B00858161 /* AppDelegate.swift */; };
+		A97D9B1A1AC1AF8B00858161 /* Lens.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B181AC1AF8B00858161 /* Lens.xcdatamodeld */; };
+		A97D9B1C1AC1AF8B00858161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B1B1AC1AF8B00858161 /* ViewController.swift */; };
+		A97D9B1F1AC1AF8B00858161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A97D9B1D1AC1AF8B00858161 /* Main.storyboard */; };
+		A97D9B211AC1AF8B00858161 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A97D9B201AC1AF8B00858161 /* Images.xcassets */; };
+		A97D9B241AC1AF8B00858161 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D9B221AC1AF8B00858161 /* LaunchScreen.xib */; };
+		A97D9B301AC1AF8B00858161 /* LensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B2F1AC1AF8B00858161 /* LensTests.swift */; };
+		A97D9B401AC2F3F400858161 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B3F1AC2F3F400858161 /* Person.swift */; };
+		A97D9B411AC2F3F400858161 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B3F1AC2F3F400858161 /* Person.swift */; };
+		A97D9B481AC2F78C00858161 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B451AC2F78C00858161 /* Lens.swift */; };
+		A97D9B491AC2F78C00858161 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B451AC2F78C00858161 /* Lens.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A97D9B2A1AC1AF8B00858161 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A97D9B091AC1AF8B00858161 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A97D9B101AC1AF8B00858161;
+			remoteInfo = Lens;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A97D9B111AC1AF8B00858161 /* Lens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lens.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A97D9B151AC1AF8B00858161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A97D9B161AC1AF8B00858161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A97D9B191AC1AF8B00858161 /* Lens.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lens.xcdatamodel; sourceTree = "<group>"; };
+		A97D9B1B1AC1AF8B00858161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A97D9B1E1AC1AF8B00858161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A97D9B201AC1AF8B00858161 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Lens/Images.xcassets; sourceTree = "<group>"; };
+		A97D9B231AC1AF8B00858161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A97D9B291AC1AF8B00858161 /* LensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LensTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A97D9B2E1AC1AF8B00858161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A97D9B2F1AC1AF8B00858161 /* LensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensTests.swift; sourceTree = "<group>"; };
+		A97D9B3F1AC2F3F400858161 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		A97D9B431AC2F78C00858161 /* Lens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lens.h; sourceTree = "<group>"; };
+		A97D9B441AC2F78C00858161 /* Lens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lens.m; sourceTree = "<group>"; };
+		A97D9B451AC2F78C00858161 /* Lens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A97D9B0E1AC1AF8B00858161 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A97D9B261AC1AF8B00858161 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A97D9B081AC1AF8B00858161 = {
+			isa = PBXGroup;
+			children = (
+				A97D9B421AC2F78C00858161 /* Source */,
+				A97D9B131AC1AF8B00858161 /* Lens */,
+				A97D9B2C1AC1AF8B00858161 /* LensTests */,
+				A97D9B3E1AC1AFF900858161 /* Interface */,
+				A97D9B3D1AC1AFE700858161 /* CoreData */,
+				A97D9B121AC1AF8B00858161 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A97D9B121AC1AF8B00858161 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A97D9B111AC1AF8B00858161 /* Lens.app */,
+				A97D9B291AC1AF8B00858161 /* LensTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A97D9B131AC1AF8B00858161 /* Lens */ = {
+			isa = PBXGroup;
+			children = (
+				A97D9B161AC1AF8B00858161 /* AppDelegate.swift */,
+				A97D9B1B1AC1AF8B00858161 /* ViewController.swift */,
+				A97D9B3F1AC2F3F400858161 /* Person.swift */,
+				A97D9B141AC1AF8B00858161 /* Supporting Files */,
+			);
+			path = Lens;
+			sourceTree = "<group>";
+		};
+		A97D9B141AC1AF8B00858161 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A97D9B151AC1AF8B00858161 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A97D9B2C1AC1AF8B00858161 /* LensTests */ = {
+			isa = PBXGroup;
+			children = (
+				A97D9B2F1AC1AF8B00858161 /* LensTests.swift */,
+				A97D9B2D1AC1AF8B00858161 /* Supporting Files */,
+			);
+			path = LensTests;
+			sourceTree = "<group>";
+		};
+		A97D9B2D1AC1AF8B00858161 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A97D9B2E1AC1AF8B00858161 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A97D9B3D1AC1AFE700858161 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A97D9B181AC1AF8B00858161 /* Lens.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		A97D9B3E1AC1AFF900858161 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A97D9B201AC1AF8B00858161 /* Images.xcassets */,
+				A97D9B1D1AC1AF8B00858161 /* Main.storyboard */,
+				A97D9B221AC1AF8B00858161 /* LaunchScreen.xib */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		A97D9B421AC2F78C00858161 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A97D9B431AC2F78C00858161 /* Lens.h */,
+				A97D9B441AC2F78C00858161 /* Lens.m */,
+				A97D9B451AC2F78C00858161 /* Lens.swift */,
+			);
+			name = Source;
+			path = ../Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A97D9B101AC1AF8B00858161 /* Lens */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A97D9B331AC1AF8B00858161 /* Build configuration list for PBXNativeTarget "Lens" */;
+			buildPhases = (
+				A97D9B0D1AC1AF8B00858161 /* Sources */,
+				A97D9B0E1AC1AF8B00858161 /* Frameworks */,
+				A97D9B0F1AC1AF8B00858161 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lens;
+			productName = Lens;
+			productReference = A97D9B111AC1AF8B00858161 /* Lens.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A97D9B281AC1AF8B00858161 /* LensTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A97D9B361AC1AF8B00858161 /* Build configuration list for PBXNativeTarget "LensTests" */;
+			buildPhases = (
+				A97D9B251AC1AF8B00858161 /* Sources */,
+				A97D9B261AC1AF8B00858161 /* Frameworks */,
+				A97D9B271AC1AF8B00858161 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A97D9B2B1AC1AF8B00858161 /* PBXTargetDependency */,
+			);
+			name = LensTests;
+			productName = LensTests;
+			productReference = A97D9B291AC1AF8B00858161 /* LensTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A97D9B091AC1AF8B00858161 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = LPM;
+				TargetAttributes = {
+					A97D9B101AC1AF8B00858161 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					A97D9B281AC1AF8B00858161 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = A97D9B101AC1AF8B00858161;
+					};
+				};
+			};
+			buildConfigurationList = A97D9B0C1AC1AF8B00858161 /* Build configuration list for PBXProject "Lens" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A97D9B081AC1AF8B00858161;
+			productRefGroup = A97D9B121AC1AF8B00858161 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A97D9B101AC1AF8B00858161 /* Lens */,
+				A97D9B281AC1AF8B00858161 /* LensTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A97D9B0F1AC1AF8B00858161 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A97D9B1F1AC1AF8B00858161 /* Main.storyboard in Resources */,
+				A97D9B241AC1AF8B00858161 /* LaunchScreen.xib in Resources */,
+				A97D9B211AC1AF8B00858161 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A97D9B271AC1AF8B00858161 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A97D9B0D1AC1AF8B00858161 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A97D9B1C1AC1AF8B00858161 /* ViewController.swift in Sources */,
+				A97D9B171AC1AF8B00858161 /* AppDelegate.swift in Sources */,
+				A97D9B401AC2F3F400858161 /* Person.swift in Sources */,
+				A97D9B1A1AC1AF8B00858161 /* Lens.xcdatamodeld in Sources */,
+				A97D9B481AC2F78C00858161 /* Lens.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A97D9B251AC1AF8B00858161 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A97D9B411AC2F3F400858161 /* Person.swift in Sources */,
+				A97D9B301AC1AF8B00858161 /* LensTests.swift in Sources */,
+				A97D9B491AC2F78C00858161 /* Lens.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A97D9B2B1AC1AF8B00858161 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A97D9B101AC1AF8B00858161 /* Lens */;
+			targetProxy = A97D9B2A1AC1AF8B00858161 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A97D9B1D1AC1AF8B00858161 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A97D9B1E1AC1AF8B00858161 /* Base */,
+			);
+			name = Main.storyboard;
+			path = Lens;
+			sourceTree = "<group>";
+		};
+		A97D9B221AC1AF8B00858161 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A97D9B231AC1AF8B00858161 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = Lens;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A97D9B311AC1AF8B00858161 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A97D9B321AC1AF8B00858161 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A97D9B341AC1AF8B00858161 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Lens/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A97D9B351AC1AF8B00858161 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Lens/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A97D9B371AC1AF8B00858161 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LensTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lens.app/Lens";
+			};
+			name = Debug;
+		};
+		A97D9B381AC1AF8B00858161 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LensTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lens.app/Lens";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A97D9B0C1AC1AF8B00858161 /* Build configuration list for PBXProject "Lens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A97D9B311AC1AF8B00858161 /* Debug */,
+				A97D9B321AC1AF8B00858161 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A97D9B331AC1AF8B00858161 /* Build configuration list for PBXNativeTarget "Lens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A97D9B341AC1AF8B00858161 /* Debug */,
+				A97D9B351AC1AF8B00858161 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A97D9B361AC1AF8B00858161 /* Build configuration list for PBXNativeTarget "LensTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A97D9B371AC1AF8B00858161 /* Debug */,
+				A97D9B381AC1AF8B00858161 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A97D9B181AC1AF8B00858161 /* Lens.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A97D9B191AC1AF8B00858161 /* Lens.xcdatamodel */,
+			);
+			currentVersion = A97D9B191AC1AF8B00858161 /* Lens.xcdatamodel */;
+			name = Lens.xcdatamodeld;
+			path = Lens/Lens.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A97D9B091AC1AF8B00858161 /* Project object */;
+}
