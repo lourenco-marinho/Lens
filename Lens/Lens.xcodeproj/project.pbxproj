@@ -452,6 +452,7 @@
 				A97D9B351AC1AF8B00858161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A97D9B361AC1AF8B00858161 /* Build configuration list for PBXNativeTarget "LensTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +461,7 @@
 				A97D9B381AC1AF8B00858161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
