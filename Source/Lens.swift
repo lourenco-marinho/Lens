@@ -30,6 +30,7 @@ public typealias ComparisonMethod = (AnyObject?) -> Lens
 public typealias InMethod = ([AnyObject]) -> Lens
 public typealias SortMethod = (String, ascending: Bool) -> Lens
 public typealias LookMethod = () -> [AnyObject]?
+public typealias PredicateMethod = () -> NSPredicate
 
 class PredicateComponent {
 
@@ -78,20 +79,22 @@ class PredicateComponent {
 
 @objc public class LensRequest {
 
-    var request: NSFetchRequest!
-    var context: NSManagedObjectContext!
+    var request: NSFetchRequest?
+    var context: NSManagedObjectContext?
     var entity: NSEntityDescription!
 
     var sort: NSSortDescriptor!
     var predicateComponents: [PredicateComponent]
 
-    init(entityName: String, context: NSManagedObjectContext) {
+    init(entityName: String, context: NSManagedObjectContext?) {
 
         self.context = context
-        self.entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext: context)!
-        self.request = NSFetchRequest(entityName: entityName)
-        self.predicateComponents = [];
-
+        self.predicateComponents = []
+        
+        if let ctx = context {
+            self.entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext: context!)!
+            self.request = NSFetchRequest(entityName: entityName)
+        }
     }
 
     func append(block: () -> String) {
@@ -127,6 +130,8 @@ class PredicateComponent {
     }
 
     func generate() -> [AnyObject]? {
+        
+        assert(self.context != nil, "When Looking for objects the NSManagedObjectContext cannot be nil")
 
         self.setSort(self.sort, toFetchRequest: self.request)
 
@@ -138,7 +143,7 @@ class PredicateComponent {
         }
 
         var error: NSError?
-        var fetchResult = self.context.executeFetchRequest(self.request, error: &error)
+        var fetchResult = self.context?.executeFetchRequest(self.request!, error: &error)
 
         if let optionalError = error {
 
@@ -150,9 +155,9 @@ class PredicateComponent {
 
     }
 
-    func setSort(sort: NSSortDescriptor?, toFetchRequest request: NSFetchRequest) {
+    func setSort(sort: NSSortDescriptor?, toFetchRequest optionalRequest: NSFetchRequest?) {
 
-        if let optionalSort = sort {
+        if let optionalSort = sort, request = optionalRequest {
 
             request.sortDescriptors = [optionalSort]
 
@@ -160,9 +165,13 @@ class PredicateComponent {
 
     }
 
-    func setPredicate(predicate: NSPredicate, toFetchRequest request: NSFetchRequest) {
+    func setPredicate(predicate: NSPredicate, toFetchRequest optionalRequest: NSFetchRequest?) {
 
-        request.predicate = predicate
+        if let request = optionalRequest {
+         
+            request.predicate = predicate
+            
+        }
 
     }
 
@@ -303,11 +312,22 @@ class PredicateComponent {
         return { self.request.generate() }
 
     }
+    
+    public var predicate: PredicateMethod {
+        
+        return { self.request.createPredicate() }
+    }
 
-    public init(entityName: String, inContext context: NSManagedObjectContext) {
+    public init(entityName: String, inContext context: NSManagedObjectContext?) {
 
         self.request = LensRequest(entityName: entityName, context: context)
 
+    }
+    
+    public convenience init(entityName: String) {
+        
+        self.init(entityName: entityName, inContext: nil)
+        
     }
 
 }
@@ -316,4 +336,10 @@ func lens(forEntity entity: String, inContext context: NSManagedObjectContext) -
 
     return Lens(entityName: entity, inContext: context)
 
+}
+
+func lens(forEntity entity: String) -> Lens {
+    
+    return Lens(entityName: entity)
+    
 }
