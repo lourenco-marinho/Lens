@@ -25,321 +25,90 @@
 import Foundation
 import CoreData
 
-public typealias CompoundMethod = (String) -> Lens
-public typealias ComparisonMethod = (AnyObject?) -> Lens
-public typealias InMethod = ([AnyObject]) -> Lens
-public typealias SortMethod = (String, ascending: Bool) -> Lens
-public typealias LookMethod = () -> [AnyObject]?
-public typealias PredicateMethod = () -> NSPredicate
+public class Lens<T: NSManagedObject> {    
+    let request: LensRequest<T>
 
-class PredicateComponent {
-
-    let field: String
-    var compoundOperator: String?
-    var predicateOperator: String?
-    var value: AnyObject?
-
-    var description: String {
-
-        var comparison: String = ""
-        var queryOperator: String = ""
-        var queryValue: String = ""
-
-        if let optionalComparison = self.predicateOperator {
-
-            comparison = optionalComparison
-
-        }
-
-        if let optionalOperator = self.compoundOperator {
-
-            queryOperator = optionalOperator
-
-        }
-
-        queryValue = self.value != nil ? "%@" : "nil"
-
-        return "\(queryOperator) \(self.field) \(comparison) \(queryValue)"
-
-    }
-
-    convenience init(field: String) {
-
-        self.init(field: field, compoundOperator: nil)
-
-    }
-
-    init(field: String, compoundOperator: String?) {
-
-        self.field = field
-        self.compoundOperator = compoundOperator
-    }
-
-}
-
-@objc public class LensRequest {
-
-    var request: NSFetchRequest?
-    var context: NSManagedObjectContext?
-    var entity: NSEntityDescription!
-
-    var sort: NSSortDescriptor!
-    var predicateComponents: [PredicateComponent]
-
-    init(entityName: String, context: NSManagedObjectContext?) {
-
-        self.context = context
-        self.predicateComponents = []
-        
-        if let ctx = context {
-            self.entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext: context!)!
-            self.request = NSFetchRequest(entityName: entityName)
-        }
-    }
-
-    func append(block: () -> String) {
-
-        let stringToAppend = block()
-
-    }
-
-    func appendComparison(comparison: String, value: AnyObject?) {
-
-        let optionalComponent = self.predicateComponents.last
-
-        if let component = optionalComponent {
-
-            component.predicateOperator = comparison
-            component.value = value
-
-        }
-
-    }
-
-    func appendComponent(#field: String) {
-
-        self.appendComponent(field: field, compoundOperator: nil)
-
-    }
-
-    func appendComponent(#field: String, compoundOperator: String?) {
-
-        let component = PredicateComponent(field: field, compoundOperator: compoundOperator)
-        self.predicateComponents.append(component)
-
-    }
-
-    func generate() -> [AnyObject]? {
-        
-        assert(self.context != nil, "When Looking for objects the NSManagedObjectContext cannot be nil")
-
-        self.setSort(self.sort, toFetchRequest: self.request)
-
-        if self.predicateComponents.isEmpty == false {
-
-            let predicate: NSPredicate = self.createPredicate()
-            self.setPredicate(predicate, toFetchRequest: self.request)
-
-        }
-
-        var error: NSError?
-        var fetchResult = self.context?.executeFetchRequest(self.request!, error: &error)
-
-        if let optionalError = error {
-
-            fetchResult = []
-
-        }
-
-        return fetchResult
-
-    }
-
-    func setSort(sort: NSSortDescriptor?, toFetchRequest optionalRequest: NSFetchRequest?) {
-
-        if let optionalSort = sort, request = optionalRequest {
-
-            request.sortDescriptors = [optionalSort]
-
-        }
-
-    }
-
-    func setPredicate(predicate: NSPredicate, toFetchRequest optionalRequest: NSFetchRequest?) {
-
-        if let request = optionalRequest {
-         
-            request.predicate = predicate
-            
-        }
-
-    }
-
-    func createPredicate() -> NSPredicate {
-
-        let query: String = self.createPredicateQuery()
-        let arguments: [AnyObject] = self.createPredicateArguments()
-
-        return NSPredicate(format: query, argumentArray: arguments)
-
-    }
-
-    func createPredicateQuery() -> String {
-
-        var query: String = self.predicateComponents.reduce("") { $0 + "\($1.description) " }
-        return query.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-
-    }
-
-    func createPredicateArguments() -> [AnyObject] {
-
-        var arguments: [AnyObject] = [];
-
-        for component in self.predicateComponents {
-
-            if let value: AnyObject = component.value {
-
-                arguments.append(value)
-
-            }
-
-        }
-
-        return arguments
-
-    }
-
-    func createSortDescriptorWithKey(key: String, ascending: Bool) {
-
-        self.sort = NSSortDescriptor(key: key, ascending: ascending)
-
-    }
-
-}
-
-@objc public class Lens: NSObject {
-
-    let request: LensRequest
-
-    public var find: CompoundMethod {
-
+    public var find: (String) -> Lens<T> {
         return { field in
-
-            self.request.appendComponent(field: field)
+            self.request.appendField(field)
             return self
-
         }
-
     }
 
-    public var and: CompoundMethod {
-
+    public var and: (String) -> Lens<T> {
         return { field in
-
-            self.request.appendComponent(field: field, compoundOperator: "AND")
+            self.request.appendField(field, compoundOperator: "AND")
             return self
-
         }
-
     }
 
-    public var or: CompoundMethod {
-
+    public var or: (String) -> Lens<T> {
         return { field in
-
-            self.request.appendComponent(field: field, compoundOperator: "OR")
+            self.request.appendField(field, compoundOperator: "OR")
             return self
-
         }
-
     }
 
-    public var equals: ComparisonMethod {
-
+    public var equals: (AnyObject?) -> Lens<T> {
         return { value in
-
             self.request.appendComparison("=", value: value)
             return self
-
         }
-
     }
 
-    public var notEquals: ComparisonMethod {
-
+    public var notEquals: (AnyObject?) -> Lens<T> {
         return { value in
-
             self.request.appendComparison("!=", value: value)
             return self
-
         }
-
     }
 
-    public var contains: ComparisonMethod {
-
+    public var contains: (AnyObject?) -> Lens<T> {
         return { value in
-
             self.request.appendComparison("CONTAINS[cd]", value: value)
             return self
         }
-
     }
 
-    public var inside: InMethod {
-
+    public var inside: ([AnyObject]) -> Lens {
         return { values in
-
             self.request.appendComparison("IN", value: values)
             return self
         }
-
     }
 
-    public var sort: SortMethod {
-
+    public var sort: (String, ascending: Bool) -> Lens<T> {
         return { key, ascending in
-
             self.request.createSortDescriptorWithKey(key, ascending: ascending)
             return self
-
         }
-
     }
 
-    public var look: LookMethod {
-
+    public var look: () -> [T]? {
         return { self.request.generate() }
-
     }
     
-    public var predicate: PredicateMethod {
-        
+    public var predicate: () -> NSPredicate {
         return { self.request.createPredicate() }
     }
 
-    public init(entityName: String, inContext context: NSManagedObjectContext?) {
-
-        self.request = LensRequest(entityName: entityName, context: context)
-
+    public init(entity: T.Type, inContext context: NSManagedObjectContext?) {
+        request = LensRequest(entity: entity, context: context)
     }
     
-    public convenience init(entityName: String) {
-        
-        self.init(entityName: entityName, inContext: nil)
-        
+    public convenience init(entity: T.Type) {
+        self.init(entity: entity, inContext: nil)
     }
+}
+
+func lens<T: NSManagedObject>(forEntity entity: T.Type, inContext context: NSManagedObjectContext) -> Lens<T> {
+
+    return Lens(entity: entity, inContext: context)
 
 }
 
-func lens(forEntity entity: String, inContext context: NSManagedObjectContext) -> Lens {
-
-    return Lens(entityName: entity, inContext: context)
-
-}
-
-func lens(forEntity entity: String) -> Lens {
+func lens<T: NSManagedObject>(forEntity entity: T.Type) -> Lens<T> {
     
-    return Lens(entityName: entity)
+    return Lens(entity: entity)
     
 }

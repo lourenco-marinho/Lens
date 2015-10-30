@@ -30,17 +30,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var tableView: UITableView!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var peopleArray: [AnyObject]?
+    var peopleArray: [Person]?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.peopleArray = self.findAll()
+        self.peopleArray = findAll()
 
     }
     
     // MARK: - TableView DataSource and Delegate Methods
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let array = self.peopleArray {
@@ -54,8 +53,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        let person = self.peopleArray![indexPath.row] as! Person
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+        let person = self.peopleArray![indexPath.row]
         
         cell.textLabel!.text = person.name
         
@@ -63,34 +62,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     // MARK: - Helper Methods
-    
-    func findAll() -> [AnyObject]? {
+    func findAll() -> [Person]? {
         
-        return lens(forEntity: "Person", inContext: appDelegate.managedObjectContext!).look()
-        
-    }
-    
-    func findByAge(age: Int) -> [AnyObject]? {
-        
-        return lens(forEntity: "Person", inContext: appDelegate.managedObjectContext!).find("age").equals(age).look()
+        return lens(forEntity: Person.self, inContext: appDelegate.managedObjectContext!).look()
         
     }
     
-    func findByName(name: String) -> [AnyObject]? {
+    func findByAge(age: Int) -> [Person]? {
         
-        return lens(forEntity: "Person", inContext: appDelegate.managedObjectContext!).find("name").equals(name).look()
+        return lens(forEntity: Person.self, inContext: appDelegate.managedObjectContext!).find("age").equals(age).look()
         
     }
     
-    func findInside(names: [String]) -> [AnyObject]? {
+    func findByName(name: String) -> [Person]? {
         
-        return lens(forEntity: "Person", inContext: self.appDelegate.managedObjectContext!).find("name").inside(names).look()
+        return lens(forEntity: Person.self, inContext: appDelegate.managedObjectContext!).find("name").equals(name).look()
+        
+    }
+    
+    func findInside(names: [String]) -> [Person]? {
+        
+        return lens(forEntity: Person.self, inContext: self.appDelegate.managedObjectContext!).find("name").inside(names).look()
         
     }
 
     
     // MARK: - Action Method
-    
     @IBAction func segmentedControlDidChange(sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
@@ -114,6 +111,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.reloadData()
         
     }
-
 }
 
