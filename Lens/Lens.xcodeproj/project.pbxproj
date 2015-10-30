@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91C70A21BD90551000AB748 /* LensRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C70A11BD90551000AB748 /* LensRequest.swift */; settings = {ASSET_TAGS = (); }; };
+		A91C70A41BD90590000AB748 /* PredicateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C70A31BD90590000AB748 /* PredicateComponent.swift */; settings = {ASSET_TAGS = (); }; };
+		A91C70A51BD92C72000AB748 /* LensRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C70A11BD90551000AB748 /* LensRequest.swift */; settings = {ASSET_TAGS = (); }; };
+		A91C70A61BD92C77000AB748 /* PredicateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91C70A31BD90590000AB748 /* PredicateComponent.swift */; settings = {ASSET_TAGS = (); }; };
+		A943EB581BDA7D0D00DB8049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B161AC1AF8B00858161 /* AppDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		A943EB591BDA833100DB8049 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B3F1AC2F3F400858161 /* Person.swift */; settings = {ASSET_TAGS = (); }; };
 		A97D9B171AC1AF8B00858161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B161AC1AF8B00858161 /* AppDelegate.swift */; };
 		A97D9B1A1AC1AF8B00858161 /* Lens.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B181AC1AF8B00858161 /* Lens.xcdatamodeld */; };
 		A97D9B1C1AC1AF8B00858161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B1B1AC1AF8B00858161 /* ViewController.swift */; };
@@ -15,7 +21,6 @@
 		A97D9B241AC1AF8B00858161 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D9B221AC1AF8B00858161 /* LaunchScreen.xib */; };
 		A97D9B301AC1AF8B00858161 /* LensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B2F1AC1AF8B00858161 /* LensTests.swift */; };
 		A97D9B401AC2F3F400858161 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B3F1AC2F3F400858161 /* Person.swift */; };
-		A97D9B411AC2F3F400858161 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B3F1AC2F3F400858161 /* Person.swift */; };
 		A97D9B481AC2F78C00858161 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B451AC2F78C00858161 /* Lens.swift */; };
 		A97D9B491AC2F78C00858161 /* Lens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D9B451AC2F78C00858161 /* Lens.swift */; };
 /* End PBXBuildFile section */
@@ -31,11 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A91C70A11BD90551000AB748 /* LensRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensRequest.swift; sourceTree = "<group>"; };
+		A91C70A31BD90590000AB748 /* PredicateComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicateComponent.swift; sourceTree = "<group>"; };
 		A97D9B111AC1AF8B00858161 /* Lens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97D9B151AC1AF8B00858161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A97D9B161AC1AF8B00858161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A97D9B191AC1AF8B00858161 /* Lens.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lens.xcdatamodel; sourceTree = "<group>"; };
-		A97D9B1B1AC1AF8B00858161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A97D9B1B1AC1AF8B00858161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		A97D9B1E1AC1AF8B00858161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A97D9B201AC1AF8B00858161 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Lens/Images.xcassets; sourceTree = "<group>"; };
 		A97D9B231AC1AF8B00858161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -43,8 +50,6 @@
 		A97D9B2E1AC1AF8B00858161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A97D9B2F1AC1AF8B00858161 /* LensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensTests.swift; sourceTree = "<group>"; };
 		A97D9B3F1AC2F3F400858161 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		A97D9B431AC2F78C00858161 /* Lens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lens.h; sourceTree = "<group>"; };
-		A97D9B441AC2F78C00858161 /* Lens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lens.m; sourceTree = "<group>"; };
 		A97D9B451AC2F78C00858161 /* Lens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lens.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,9 +149,9 @@
 		A97D9B421AC2F78C00858161 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				A97D9B431AC2F78C00858161 /* Lens.h */,
-				A97D9B441AC2F78C00858161 /* Lens.m */,
 				A97D9B451AC2F78C00858161 /* Lens.swift */,
+				A91C70A11BD90551000AB748 /* LensRequest.swift */,
+				A91C70A31BD90590000AB748 /* PredicateComponent.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -196,7 +201,8 @@
 		A97D9B091AC1AF8B00858161 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = LPM;
 				TargetAttributes = {
 					A97D9B101AC1AF8B00858161 = {
@@ -255,8 +261,10 @@
 				A97D9B1C1AC1AF8B00858161 /* ViewController.swift in Sources */,
 				A97D9B171AC1AF8B00858161 /* AppDelegate.swift in Sources */,
 				A97D9B401AC2F3F400858161 /* Person.swift in Sources */,
+				A91C70A41BD90590000AB748 /* PredicateComponent.swift in Sources */,
 				A97D9B1A1AC1AF8B00858161 /* Lens.xcdatamodeld in Sources */,
 				A97D9B481AC2F78C00858161 /* Lens.swift in Sources */,
+				A91C70A21BD90551000AB748 /* LensRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,9 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A97D9B411AC2F3F400858161 /* Person.swift in Sources */,
+				A943EB591BDA833100DB8049 /* Person.swift in Sources */,
+				A943EB581BDA7D0D00DB8049 /* AppDelegate.swift in Sources */,
+				A91C70A61BD92C77000AB748 /* PredicateComponent.swift in Sources */,
 				A97D9B301AC1AF8B00858161 /* LensTests.swift in Sources */,
 				A97D9B491AC2F78C00858161 /* Lens.swift in Sources */,
+				A91C70A51BD92C72000AB748 /* LensRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +333,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -385,6 +397,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Lens/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lens.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -395,6 +408,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Lens/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lens.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -413,6 +427,7 @@
 				);
 				INFOPLIST_FILE = LensTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lens.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lens.app/Lens";
 			};
@@ -428,6 +443,7 @@
 				);
 				INFOPLIST_FILE = LensTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lens.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lens.app/Lens";
 			};

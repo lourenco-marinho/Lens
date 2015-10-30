@@ -1,4 +1,4 @@
-// Lens.h
+// Lens.swift
 //
 // The MIT License (MIT)
 //
@@ -22,18 +22,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+import Foundation
 
-@interface Lenses : NSObject
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-    Lens * lens(NSString *entity, NSManagedObjectContext *context);
-
-#ifdef __cplusplus
+class PredicateComponent {
+    let field: String
+    var compoundOperator: String?
+    var predicateOperator: String?
+    var value: AnyObject?
+    
+    var description: String {
+        var comparison: String = ""
+        var queryOperator: String = ""
+        var queryValue: String = ""
+        
+        if let optionalComparison = predicateOperator {
+            comparison = optionalComparison
+        }
+        
+        if let optionalOperator = compoundOperator {
+            queryOperator = optionalOperator
+        }
+        
+        queryValue = (value != nil ? "%@" : "nil")
+        
+        return "\(queryOperator) \(field) \(comparison) \(queryValue)"
+    }
+    
+    convenience init(field: String) {
+        self.init(field: field, compoundOperator: nil)
+    }
+    
+    init(field: String, compoundOperator: String?) {
+        self.field = field
+        self.compoundOperator = compoundOperator
+    }
 }
-#endif
-
-@end
