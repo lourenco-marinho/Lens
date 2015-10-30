@@ -5,7 +5,7 @@ Lens is a very simple yet elegant query builder made in Swift to work with CoreD
 Features
 --
 - [x] Chainable method calls
-- [x] Similar syntax in both Objective-C and Swift
+- [x] Generics Support
 
 Requirements
 --
@@ -20,31 +20,23 @@ Usage
 --
 
 ### Query all objects from a single entity
-##### Objective-C & Swift
-```objc
-lens(@"Person", self.managedObjectContext).look();
+```swift
+lens(forEntity: Person.self, managedObjectContext).look();
 ```
 
 ### Query entities based on their properties.
-##### Objective-C & Swift
-```objc
-lens(@"Person", self.managedObjectContext).find(@"name").equals(@"John").look();
+```swift
+lens(forEntity: Person.self, managedObjectContext).find(@"name").equals(@"John").look();
 ```
 
 ### Compound your queries.
-##### Objective-C & Swift
-```objc
-lens(@"Person", self.managedObjectContext).find(@"name").equals(@"John").and(@"age").equals(26).look();
+```swift
+lens(forEntity: Person.self, managedObjectContext).find(@"name").equals(@"John").and(@"age").equals(26).look();
 ```
 
 ### Sort your results
-##### Objective-C
-```objc
-lens(@"Person", self.managedObjectContext).sort(@"name", YES).look();
-```
-##### Swift
 ```swift
-lens(forEntity: "Person", inContext: self.managedObjectContext).sort("name", ascending: true).look();
+lens(forEntity: Person.self, inContext: managedObjectContext).sort("name", ascending: true).look();
 ```
 
 Who to blame
